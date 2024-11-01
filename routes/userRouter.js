@@ -1,5 +1,7 @@
 import express from 'express'
+import { login, signUp } from '../controller/userController.js'
 
-export const todoRouter = express.Router()
+export const userRouter = express.Router()
 
-todoRouter.post()
+userRouter.post('/signup',signUp)
+userRouter.post('/login',login)

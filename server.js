@@ -1,11 +1,13 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import { userRouter } from './routes/userRouter.js'
+
 
 const app=express()
 app.use(express.json())
 const PORT=3004
 
-app.use('/api/user')
+app.use('/api/user',userRouter)
 
 app.listen(PORT,()=>{
     console.log('running');
