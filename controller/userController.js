@@ -57,11 +57,25 @@ export const login =async (req,res)=>{
         console.log(token);
         
 
-        return req.status(200).json({success:true, message:"login successfull", token, data:user})
+        return res.status(200).json({success:true, message:"login successfull", token, data:user})
         
 
     } catch (error) {
         return res.status(500).json({success:false, message:`error ${error.message}`})
+        
+    }
+}
+
+
+export const logout = async (req,res)=>{
+    try {
+        res.cookie('token',null)
+
+        res.status(200).json({success:true, message:'logout successfull'})
+        
+    } catch (error) {
+
+        res.status(500).json({success:false, message:`${error.message}`})
         
     }
 }

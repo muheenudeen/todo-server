@@ -1,11 +1,17 @@
 import mongoose from "mongoose";
 
-const todoSchemas=new mongoose.Schema({
-    
-    title:{type:String, require:true},
-    description:{type:String}
+const todoSchemas = new mongoose.Schema({
+
+    title: {
+        type: String,
+        require: true
+    },
+    descripeton: {
+        type: String,
+
+    }
 
 
 })
 
-export const todoSchema = mongoose.model('todo',todoSchemas)
+export const todoSchema = mongoose.model('todo', todoSchemas)
